@@ -24,7 +24,7 @@ const opcionesMovil = [
 
 <nav class="menuScroll lg:hidden fixed top-0 z-40 flex justify-between w-full items-center transition-all">
     <a href="#Home" class="logo transition-all">
-        <img class="w-60 ml-4 mt-3 mb-3" src="/public/images/navBar/LogoCell.svg" alt="Logo casa otoño movil" />
+        <img class="w-60 ml-4 mt-3 mb-3" src="/public/images/LogoCell.svg" alt="Logo casa otoño movil" />
     </a>
 
     <div id="menu-button" aria-label="menu" class="burger relative w-14 lg:hidden flex items-center focus:outline-none mr-4 mt-3 z-50">
@@ -70,7 +70,7 @@ const opcionesMovil = [
         </ul>
     ))}
 
-    <img class="w-32 mx-14" src="/public/images/navBar/navOtonoLogo.svg" alt="Logo de casa otoño">
+    <img class="w-32 mx-14" src="/public/images/navOtonoLogo.svg" alt="Logo de casa otoño">
 
     {opcionesRigth.map(opcion => (
         <ul class="flex justify-around items-center w-full">
@@ -171,7 +171,7 @@ const opcionesMovil = [
             const elementRect = targetElement.getBoundingClientRect();
 
             if (link.classList.contains('opcionMovil')) {
-                const offset = 80;
+                const offset = 60;
                  // Calcula la posición final
                 const scrollPosition = window.scrollY + elementRect.top - offset;
 
