@@ -1,0 +1,63 @@
+---
+const objetivoLogos = [
+    {name:"Respeto",
+        src:"/public/images/seccion objetivo/respeto_icon.svg"
+    },
+    {name:"Honestidad",
+        src:"/public/images/seccion objetivo/honestidad_icon.svg"
+    },
+    {name:"Amor",
+        src:"/public/images/seccion objetivo/amor_icon.svg"
+    },
+    {name:"Amabilidad",
+        src:"/public/images/seccion objetivo/amabilidad_icon.svg"
+    },
+    {name:"Responsabilidad",
+        src:"/public/images/seccion objetivo/responsabilidad_icon.svg"
+    },
+    {name:"Cuidado integral",
+        src:"/public/images/seccion objetivo/cuidado_integral_icon.svg"
+    },
+    {name:"Seguridad",
+        src:"/public/images/seccion objetivo/seguridad_icon.svg"
+    },
+    {name:"Tranquilidad y confort",
+        src:"/public/images/seccion objetivo/confort_icon.svg"
+    },
+] 
+---
+
+    <section id="Objetivo" class="landing-section bg-white relative h-screen flex justify-center   w-full ">
+        <!-- Imagen como fondo -->
+
+
+        <!-- Contenedor del texto -->
+         <div class="relative grid grid-cols-1 md:grid-cols-5 h-screen">
+            <div class="relative flex flex-col  items-center sm:items-start z-20 text-center sm:text-start rounded-lg  md:col-span-3 ">
+            <h1  class="font-spartan text-brick font-medium  text-start my-5 pt-7 lg:pt-12 text-[2rem] sm:text-[2.5rem] sm:my-7 sm:pt-8 sm:pl-20 ">
+                Nuestro objetivo
+            </h1>
+
+            <h2 class="font-spartan text-black font-light  mx-10 mt-10 text-[1.3rem] sm:text-[1.6rem] sm:mt-5 sm:pl-20 sm:mx-0" >
+                Es fomentar la autosuficiencia, la socialización y el desarrollo de las habilidades y capacidades de cada residente. Nuestro equipo especializado está comprometido con el bienestar individual de cada uno de nuestros apreciados residentes. Guiados por nuestra filosofía basada en valores fundamentales como:
+            </h2>
+           
+               
+                <ul class="flex flex-wrap items-center justify-around w-full my-10">
+                    {
+                       objetivoLogos.map((objetivo) => ( 
+                       <li class="relative flex font-spartan text-black font-light text-center  text-[1.3rem] sm:text-[1.5rem]   items-center justify-start m-3 pl-12 w-[296px] lg:w-[330] h-[47px]" >
+
+                        <img src={objetivo.src} alt={objetivo.name} class="absolute bottom-1 left-0 w-10 pt-3 mr-5"/><span class="ml-5">{objetivo.name}</span>
+                        
+                        </li>)) 
+                    }
+                   
+                </ul>
+
+               
+           </div>
+         <img class=" md:col-span-2 md:h-full md:w-full" src="/public/images/seccion objetivo/objetivo_img.webp" alt="Viejito con pelota en las manos">
+        </div>
+        
+    </section>

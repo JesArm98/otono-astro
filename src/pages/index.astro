@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Home from '../components/Home.astro';
+import Navbar from '../components/Navbar.astro';
+import Objetivo from '../components/Objetivo.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
+<!-- <Navbar/>-->
 <Layout>
-	<Welcome />
+	<Navbar/>
+	<main class="relative w-full ">
+		<div class="snap-center"><Home/></div>
+		<div class="snap-center"><Objetivo/></div>
+	 
+
+	</main>
+	
 </Layout>
