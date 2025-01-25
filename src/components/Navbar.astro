@@ -206,12 +206,10 @@ const opcionesMovil = [
     window.addEventListener('scroll', () => {
   const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-  if (scrollPercentage > 30) { // Cambia el 50 por el porcentaje que desees
-    // Acciones cuando el scroll supera el 50%
+  if (scrollPercentage > 5) { 
     const navs = document.querySelectorAll('nav');
     navs.forEach(nav => nav.classList.add('scrolled'));
   } else {
-    // Acciones cuando el scroll es menor al 50%
     const navs = document.querySelectorAll('nav');
     navs.forEach(nav => nav.classList.remove('scrolled'));
   }

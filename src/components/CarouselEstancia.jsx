@@ -1,6 +1,14 @@
 // Import Swiper core and required modules
-import { Pagination, EffectFade } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Pagination,
+  EffectFade,
+  EffectCreative,
+  EffectCube,
+  EffectFlip,
+  EffectCoverflow,
+  Navigation,
+} from "swiper/modules";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -91,21 +99,26 @@ const SlideContent = ({ estancia, showData, setShowData }) => {
 
 export const Carousel = () => {
   const [showData, setShowData] = useState(false);
+  const swiper = useSwiper();
 
   return (
     <Swiper
-      modules={[Pagination, EffectFade]}
-      spaceBetween={150}
+      modules={[Pagination, EffectCreative]}
+      spaceBetween={50}
       slidesPerView={1}
       pagination={{ clickable: true }}
-      effect="fade"
+      effect="creative"
       loop={true}
-      allowSlideNext={!showData} // Deshabilita el slide siguiente si showData es true
-      allowSlidePrev={!showData} // Deshabilita el slide anterior si showData es true
+      speed={500}
+      allowSlideNext={!showData}
+      allowSlidePrev={!showData}
       className="w-full h-full flex justify-center items-center "
     >
       {estancias.map((estancia) => (
         <SwiperSlide key={estancia.id} className="flex justify-center ml-20 ">
+          <button onClick={() => swiper.slideNext}>
+            Slide to the next slide
+          </button>
           <div className="font-spartan w-80 h-[590px]  left-1/2 -translate-x-1/2 relative flex justify-center items-center">
             <img
               src={estancia.image}
