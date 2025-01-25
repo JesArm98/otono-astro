@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Opcional: Define la ruta base para imports
+    "jsx": "react-jsx", // Especifica el tipo de JSX (React)
+    "jsxImportSource": "react", // Define la fuente de importación para JSX
+    "checkJs": true, // Opcional: Habilita la verificación de tipos en archivos .js
+    "strict": false
+  },
+  "include": [
+    "**/*" // Incluye todos los archivos del proyecto
+  ],
+  "exclude": [
+    "node_modules", // Excluye node_modules
+    "dist" // Excluye la carpeta dist
+  ]
+}

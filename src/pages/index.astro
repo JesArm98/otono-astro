@@ -2,6 +2,7 @@
 import Home from '../components/Home.astro';
 import Navbar from '../components/Navbar.astro';
 import Objetivo from '../components/Objetivo.astro';
+import Estancia from '../components/Estancia.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -12,9 +13,10 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<Navbar/>
 	<main class="relative w-full ">
-		<div class="snap-center"><Home/></div>
-		<div class="snap-center"><Objetivo/></div>
-	 
+		
+		<Home/>	
+		<Objetivo/>	
+		<Estancia/>	 
 
 	</main>
 	

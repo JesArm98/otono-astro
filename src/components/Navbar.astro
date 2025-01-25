@@ -2,7 +2,7 @@
 // Arrays con las opciones del menú
 const opcionesLeft = [
     { title: "Nosotros", href: "#Objetivo" },
-    { title: "Estancia", href: "" },
+    { title: "Estancia", href: "#Estancia" },
     { title: "Habitaciones", href: "" },
 ];
 
@@ -14,7 +14,7 @@ const opcionesRigth = [
 
 const opcionesMovil = [
     { title: "Nosotros", href: "#Objetivo" },
-    { title: "Estancia", href: "" },
+    { title: "Estancia", href: "#Estancia" },
     { title: "Habitaciones", href: "" },
     { title: "Instalaciones", href: "" },
     { title: "Actividades", href: "" },
@@ -23,8 +23,8 @@ const opcionesMovil = [
 ---
 
 <nav class="menuScroll lg:hidden fixed top-0 z-40 flex justify-between w-full items-center transition-all">
-    <a href="#Home" class="logo transition-all">
-        <img class="w-60 ml-4 mt-3 mb-3" src="/public/images/LogoCell.svg" alt="Logo casa otoño movil" />
+    <a href="#Home" class="logo transition-all w-60 ml-4 mt-3 mb-3">
+        <img class="" src="/public/images/LogoCell.svg" alt="Logo casa otoño movil" />
     </a>
 
     <div id="menu-button" aria-label="menu" class="burger relative w-14 lg:hidden flex items-center focus:outline-none mr-4 mt-3 z-50">
@@ -61,24 +61,28 @@ const opcionesMovil = [
     </div>
 </nav>
 
-<nav class="menuScroll hidden fixed top-0 z-50 lg:flex justify-around w-full items-center px-12 py-4">
-    {opcionesLeft.map(opcion => (
+<nav class=" menuScroll hidden fixed top-0 z-50 lg:flex justify-around w-full items-center px-12 py-4">
+    
         <ul class="flex justify-around items-center w-full">
+            {opcionesLeft.map(opcion => (
             <li class="text-white font-spartan font-normal text-[1.4rem] hover:underline hover:decoration-orange-600 decoration-[3.1px] underline-offset-4 duration-500">
                 <a href={opcion.href} class="opcion  brick">{opcion.title}</a>
             </li>
+))}
         </ul>
-    ))}
+    
 
-    <img class="w-32 mx-14" src="/public/images/navOtonoLogo.svg" alt="Logo de casa otoño">
+   <a href="#Home" class=" w-72 mx-14 "><img class="w-32" src="/public/images/navOtonoLogo.svg" alt="Logo de casa otoño"></a>
 
-    {opcionesRigth.map(opcion => (
+    
         <ul class="flex justify-around items-center w-full">
+         {opcionesRigth.map(opcion => (
             <li class="text-white font-spartan font-normal text-[1.4rem] hover:underline hover:decoration-orange-600 decoration-[3.1px] underline-offset-4 duration-500">
                 <a href={opcion.href} class="opcion brick">{opcion.title}</a>
             </li>
+         ))}
         </ul>
-    ))}
+    
 </nav>
 
 <style>
@@ -202,7 +206,7 @@ const opcionesMovil = [
     window.addEventListener('scroll', () => {
   const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
-  if (scrollPercentage > 50) { // Cambia el 50 por el porcentaje que desees
+  if (scrollPercentage > 30) { // Cambia el 50 por el porcentaje que desees
     // Acciones cuando el scroll supera el 50%
     const navs = document.querySelectorAll('nav');
     navs.forEach(nav => nav.classList.add('scrolled'));
