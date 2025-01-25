@@ -22,7 +22,7 @@ const estancias = [
       "Valoración médica.",
       "Terapias físicas, cognitiva y ocupacional.",
     ],
-    image: "/public/images/seccionEstancia/estancia_temporal.webp",
+    image: "./images/seccionEstancia/estancia_temporal.webp",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const estancias = [
       "Alimentación",
       "Terapias físicas, cognitiva y ocupacional.",
     ],
-    image: "/public/images/seccionEstancia/estancia_casadia.webp",
+    image: "./images/seccionEstancia/estancia_casadia.webp",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const estancias = [
       "Terapias físicas, cognitiva y ocupacional.",
       "Sábado de buffet desayuno familiar.",
     ],
-    image: "/public/images/seccionEstancia/estancia_permanente.webp",
+    image: "./images/seccionEstancia/estancia_permanente.webp",
   },
 ];
 
