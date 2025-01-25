@@ -1,0 +1,24 @@
+/* Contenedor de la paginación */
+.swiper-pagination {
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: 0; /* Mover la paginación más abajo (ajusta este valor según necesites) */
+  left: 20%; /* Centrar horizontalmente */
+  transform: translateY(50%); /* Ajustar centrado horizontal */
+  background-color: red; /* Color de fondo del contenedor */
+  padding: 5px 10px; /* Espaciado interno */
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+/* Bullets de la paginación */
+.swiper-pagination-bullet {
+  background-color: black; /* Color de los bullets */
+  opacity: 1; /* Hacer los bullets completamente opacos */
+  width: 12px; /* Ancho de los bullets */
+  height: 12px; /* Alto de los bullets */
+  margin: 0 5px; /* Espaciado entre bullets */
+}
+
+/* Bullet activo */
+.swiper-pagination-bullet-active {
+  background-color: white; /* Color del bullet activo */
+}

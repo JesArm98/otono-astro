@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         brick: "#582114 ", // Color personalizado
         mmenu: "#63301B",
+        bgestan: "#FCF9F5",
       },
     },
   },
