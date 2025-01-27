@@ -1,24 +1,40 @@
-/* Contenedor de la paginación */
-.swiper-pagination {
+* Contenedor de la paginación */ .swiper-pagination {
   position: absolute; /* Posicionamiento absoluto */
   bottom: 0; /* Mover la paginación más abajo (ajusta este valor según necesites) */
-  left: 20%; /* Centrar horizontalmente */
-  transform: translateY(50%); /* Ajustar centrado horizontal */
-  background-color: red; /* Color de fondo del contenedor */
-  padding: 5px 10px; /* Espaciado interno */
-  border-radius: 20px; /* Bordes redondeados */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajustar centrado horizontal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaciado entre bullets */
 }
 
 /* Bullets de la paginación */
 .swiper-pagination-bullet {
-  background-color: black; /* Color de los bullets */
-  opacity: 1; /* Hacer los bullets completamente opacos */
-  width: 12px; /* Ancho de los bullets */
-  height: 12px; /* Alto de los bullets */
-  margin: 0 5px; /* Espaciado entre bullets */
+  background-color: #e2d8d4; /* Color de los bullets */
+  width: 80px; /* Ancho de los bullets */
+  height: 16px; /* Alto de los bullets */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 0; /* Elimina el margen para usar gap en el contenedor */
+  opacity: 1; /* Asegura que los bullets sean visibles */
+  transition: background-color 0.5s ease; /* Transición suave para el cambio de color */
 }
 
 /* Bullet activo */
 .swiper-pagination-bullet-active {
-  background-color: white; /* Color del bullet activo */
+  background-color: #63301b; /* Color del bullet activo */
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Aplica la animación a los slides */
+.swiper-slide {
+  animation: fade 0.5s ease-in-out;
 }

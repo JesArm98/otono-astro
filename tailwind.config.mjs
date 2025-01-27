@@ -11,6 +11,7 @@ module.exports = {
         brick: "#582114 ", // Color personalizado
         mmenu: "#63301B",
         bgestan: "#FCF9F5",
+        bgpagi: "#E2D8D4",
       },
     },
   },
