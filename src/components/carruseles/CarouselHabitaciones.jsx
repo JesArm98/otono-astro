@@ -59,8 +59,8 @@ const SlideContentLg = ({ habitacion }) => {
 
 const SlideContentMd = ({ habitacion }) => {
   return (
-    <div className=" w-full h-full flex flex-col items-center justify-center p-4  transition-all duration-300">
-      <h1 className="text-[1.3rem] font-normal text-orange-600 pt-2 ml-3">
+    <div className=" -translate-y-8 w-full h-full flex flex-col items-center justify-center p-4  transition-all duration-300">
+      <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3">
         {habitacion.title}
       </h1>
       <div className="grid grid-cols-2 grid-rows-2 gap-4">
@@ -127,7 +127,7 @@ export const Carousel = () => {
           key={habitacion.title}
           className="flex justify-center pb-12 "
         >
-          <div className="font-spartan max-w-96 h-[590px]  left-1/2 -translate-x-1/2 relative flex justify-center items-center  ">
+          <div className="font-spartan max-w-96 h-[560px]  left-1/2 -translate-x-1/2 relative flex justify-center items-center  ">
             {windoWidth >= 1024 ? (
               <SlideContentLg habitacion={habitacion} />
             ) : (

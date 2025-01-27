@@ -1,8 +1,8 @@
-* Contenedor de la paginación */ .swiper-pagination {
+.swiper-pagination {
   position: absolute; /* Posicionamiento absoluto */
-  bottom: 0; /* Mover la paginación más abajo (ajusta este valor según necesites) */
+  bottom: 40; /* Mover la paginación más abajo (ajusta este valor según necesites) */
   left: 50%; /* Centrar horizontalmente */
-  transform: translateX(-50%); /* Ajustar centrado horizontal */
+  /* Ajustar centrado horizontal */
   display: flex;
   justify-content: center;
   align-items: center;
