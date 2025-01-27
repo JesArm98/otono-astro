@@ -12,8 +12,10 @@ import { useEffect, useState } from "react";
 
 const estancias = [
   {
-    id: 1,
+    descripcion:
+      "Tu decides los dias de estancia, sin dejar de disfrutar los servicios.",
     title: "Temporal",
+
     servicios: [
       "Habitaciones con baño privado y televisión con cable.",
       "Servicio de lavandería.",
@@ -27,8 +29,10 @@ const estancias = [
     image: "./images/seccionEstancia/estancia_temporal.webp",
   },
   {
-    id: 2,
+    descripcion:
+      "Estancia de 4 a 12 horas con horario abierto de entrada y salida.",
     title: "Casa de Dia",
+
     servicios: [
       "Servicios de vigilancia de enfermería las 24 hrs",
       "Servicios de vigilancia las 24hrs, con acceso de los familiares a través de una app",
@@ -38,8 +42,10 @@ const estancias = [
     image: "./images/seccionEstancia/estancia_casadia.webp",
   },
   {
-    id: 3,
+    descripcion:
+      "Descubre la calidad de vida plena para adultos mayores con cuidado integral.",
     title: "Permanente",
+
     servicios: [
       "Habitaciones con baño privado y televisión con cable.",
       "Servicio de lavandería.",
@@ -56,7 +62,7 @@ const estancias = [
 ];
 
 // Componente para el contenido del slide
-const SlideContentLg = ({ estancia, showData, setShowData }) => {
+const SlideContentMd = ({ estancia, showData, setShowData }) => {
   if (showData) {
     return (
       <div className="w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300">
@@ -91,17 +97,19 @@ const SlideContentLg = ({ estancia, showData, setShowData }) => {
   );
 };
 
-const SlideContentMd = ({ estancia }) => {
+const SlideContentLg = ({ estancia }) => {
   const [hover, setHover] = useState(false);
 
   if (hover) {
     return (
       <div
         onMouseLeave={() => setHover(false)}
-        className="w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300"
+        className=" w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300"
       >
-        <h1 className="text-[2rem] font-normal">Servicios que incluye:</h1>
-        <ul>
+        <h1 className="text-[2rem] font-normal pt-2 ml-3">
+          Servicios que incluye:
+        </h1>
+        <ul className="translate-y-8">
           {estancia.servicios.map((servicio, i) => (
             <li className="font-light text-[20px]" key={i}>
               - {servicio}
@@ -118,6 +126,9 @@ const SlideContentMd = ({ estancia }) => {
       className="flex flex-col justify-center items-center w-full h-full relative z-10 p-4 bg-brick bg-opacity-70 text-white rounded-md transition-all duration-300"
     >
       <h1 className="text-[1.8rem] font-normal leading-9">{estancia.title}</h1>
+      <h2 className=" translate-y-20 font-light text-center text-[26px] max-w-72">
+        {estancia.descripcion}
+      </h2>
     </div>
   );
 };
@@ -165,9 +176,9 @@ export const Carousel = () => {
               className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-md "
             />
             {windoWidth >= 1024 ? (
-              <SlideContentMd estancia={estancia} />
+              <SlideContentLg estancia={estancia} />
             ) : (
-              <SlideContentLg
+              <SlideContentMd
                 estancia={estancia}
                 showData={showData}
                 setShowData={setShowData}
