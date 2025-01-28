@@ -37,4 +37,29 @@
 /* Aplica la animación a los slides */
 .swiper-slide {
   animation: fade 0.5s ease-in-out;
+  margin-right: 0px;
+}
+
+.swiper-slide-active {
+  margin-right: 0px;
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-37%) translateY(-35%);
+  }
+  .swiper-pagination-bullet {
+    background-color: #e2d8d4; /* Color de los bullets */
+    width: 8px; /* Ancho de los bullets */
+    height: 110px; /* Alto de los bullets */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 0; /* Elimina el margen para usar gap en el contenedor */
+    opacity: 1; /* Asegura que los bullets sean visibles */
+    transition: background-color 0.5s ease; /* Transición suave para el cambio de color */
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #63301b; /* Color del bullet activo */
+  }
 }

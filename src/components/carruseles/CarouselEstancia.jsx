@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import "./Carousel.css";
+import "./CarouselEstancia.css";
 import { useEffect, useState } from "react";
 
 const estancias = [
@@ -106,7 +106,7 @@ const SlideContentLg = ({ estancia }) => {
         onMouseLeave={() => setHover(false)}
         className=" w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300"
       >
-        <h1 className="text-[2rem] font-normal pt-2 ml-3">
+        <h1 className="text-[1.8rem] xl:text-[2rem]  font-normal pt-2 ml-3">
           Servicios que incluye:
         </h1>
         <ul className="translate-y-8">
@@ -123,9 +123,11 @@ const SlideContentLg = ({ estancia }) => {
   return (
     <div
       onMouseEnter={() => setHover(true)}
-      className="flex flex-col justify-center items-center w-full h-full relative z-10 p-4 bg-brick bg-opacity-70 text-white rounded-md transition-all duration-300"
+      className="flex flex-col justify-center items-center w-full h-full relative z-10 p-4 bg-brick bg-opacity-70 text-white rounded-md transition-all duration-300 "
     >
-      <h1 className="text-[1.8rem] font-normal leading-9">{estancia.title}</h1>
+      <h1 className="text-[1.8rem] xl:text-[2rem]  font-normal leading-9">
+        {estancia.title}
+      </h1>
       <h2 className=" translate-y-20 font-light text-center text-[26px] max-w-72">
         {estancia.descripcion}
       </h2>
@@ -139,6 +141,7 @@ export const Carousel = () => {
 
   useEffect(() => {
     setWindoWidth(window.innerWidth);
+    console.log(`El viewport mide: ${windoWidth}`);
   }, [windoWidth]);
 
   return (
@@ -151,25 +154,23 @@ export const Carousel = () => {
       speed={500}
       allowSlideNext={!showData}
       allowSlidePrev={!showData}
-      className="w-full h-full flex justify-center items-center "
+      className="w-full h-full flex justify-center items-center  mx-4"
       breakpoints={{
         1024: {
           slidesPerView: 3,
           spaceBetween: 30,
+          pagination: false,
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
+
         320: {
           slidesPerView: 1,
           spaceBetween: 10,
         },
       }}
     >
-      {estancias.map((estancia) => (
-        <SwiperSlide key={estancia.id} className="flex justify-center pb-12 ">
-          <div className="font-spartan max-w-96 h-[590px]  left-1/2 -translate-x-1/2 relative flex justify-center items-center  ">
+      {estancias.map((estancia, i) => (
+        <SwiperSlide key={i} className="flex justify-center pb-12 ">
+          <div className="font-spartan max-w-80 h-[540px] sm:max-w-96 sm:h-[550px]  left-1/2 -translate-x-1/2 relative flex justify-center items-center  ">
             <img
               src={estancia.image}
               alt={estancia.title}

@@ -36,7 +36,7 @@ const opcionesMovil = [
             <path d="M4 18l16 0" />
         </svg>
         <!-- Ícono de cerrar -->
-        <svg id="close-icon" aria-label="cerrar menu" xmlns="http://www.w3.org/2000/svg" class="hidden icon icon-tabler icon-tabler-x" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <svg id="close-icon" aria-label="cerrar menu" xmlns="http://www.w3.org/2000/svg" class="hidden icon icon-tabler icon-tabler-x " width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M18 6l-12 12" />
             <path d="M6 6l12 12" />
@@ -47,7 +47,7 @@ const opcionesMovil = [
     <div id="mobile-menu" class="lg:hidden fixed top-0 right-0 h-screen w-full bg-mmenu transform translate-x-full transition-transform duration-500">
         <div class=" flex items-center pt-14 h-screen">
             
-            <ul class="flex flex-col justify-evenly w-full h-[80%] mt-20 z-50">
+            <ul class="flex flex-col justify-evenly w-full h-[80%] mt-15 z-50">
                 {
                     opcionesMovil.map(opcion => (
                         <li class="text-white font-spartan font-normal text-[1.9rem] ml-8">
@@ -61,7 +61,7 @@ const opcionesMovil = [
     </div>
 </nav>
 
-<nav class=" menuScroll hidden fixed top-0 z-50 lg:flex justify-around w-full items-center px-12 py-4">
+<nav class=" menuScroll hidden fixed top-0 z-50 lg:flex justify-around w-screen items-center px-12 py-4">
     
         <ul class="flex justify-around items-center w-full">
             {opcionesLeft.map(opcion => (
