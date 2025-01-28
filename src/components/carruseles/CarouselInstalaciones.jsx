@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import "./CarouselHabitaciones.css";
+import "./CarouselInstalaciones.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
