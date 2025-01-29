@@ -123,7 +123,7 @@ export const Carousel = () => {
             <SwiperSlide>
               <div className="font-spartan min-h-full min-w-full left-1/2 -translate-x-[51%]  relative flex justify-center items-center  rounded-lg ">
                 <div
-                  className="grid grid-cols-3 grid-rows-2 gap-4 w-[80%] max-h-[500px] "
+                  className="grid grid-cols-3 grid-rows-2 gap-4 max-w-[1200px] max-h-[500px] "
                   onMouseEnter={() => swiperInstance?.autoplay.stop()}
                   onMouseLeave={() => swiperInstance?.autoplay.start()}
                 >
@@ -158,7 +158,7 @@ export const Carousel = () => {
                     />
                   </div>
                   <div className="relative col-span-2 row-span-2 flex justify-center">
-                    <div className=" absolute  flex items-center justify-center bg-brick  rounded-2xl z-10 w-56 h-12 mt-10 ">
+                    <div className=" absolute  flex items-center justify-center bg-brick  rounded-2xl z-10 w-56 h-12 mt-4 ">
                       <h1 className="text-white text-[2rem] mx-4">
                         {imgBig[0].title}
                       </h1>
@@ -175,12 +175,12 @@ export const Carousel = () => {
             <SwiperSlide>
               <div className="font-spartan min-h-full min-w-full left-1/2 -translate-x-[51%]  relative flex justify-center items-center  rounded-lg ">
                 <div
-                  className="grid grid-cols-3 grid-rows-3 gap-4 w-[80%] max-h-[500px] "
+                  className="grid grid-cols-3 grid-rows-3 gap-4  max-w-[1200px] max-h-[500px] "
                   onMouseEnter={() => swiperInstance?.autoplay.stop()}
                   onMouseLeave={() => swiperInstance?.autoplay.start()}
                 >
                   <div className="relative col-span-3 row-span-2 flex justify-center shadow-sm">
-                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-56 h-12 mt-10 ">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-56 h-12 mt-4 ">
                       <h1 className="text-white text-[2rem] mx-4 ">
                         {imgBig[3].title}
                       </h1>
