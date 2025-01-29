@@ -48,6 +48,7 @@
   .swiper-pagination {
     display: flex;
     flex-direction: column;
+
     transform: translateX(-37%) translateY(-35%);
   }
   .swiper-pagination-bullet {
@@ -55,7 +56,7 @@
     width: 8px; /* Ancho de los bullets */
     height: 110px; /* Alto de los bullets */
     border-radius: 10px; /* Bordes redondeados */
-    margin: 0; /* Elimina el margen para usar gap en el contenedor */
+    margin-left: 300px;
     opacity: 1; /* Asegura que los bullets sean visibles */
     transition: background-color 0.5s ease; /* Transición suave para el cambio de color */
   }

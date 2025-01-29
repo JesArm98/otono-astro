@@ -1,5 +1,5 @@
 // Import Swiper core and required modules
-import { Pagination, EffectCreative } from "swiper/modules";
+import { Pagination, EffectCreative, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
@@ -11,217 +11,244 @@ import "./CarouselInstalaciones.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const habitaciones = [
+const instalaciones = [
   {
-    descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado.",
-    title: "Estandar",
-    images: [
-      { image1: "./images/seccionHabitaciones/estandar/estandar1.webp" },
-      { image2: "./images/seccionHabitaciones/estandar/estandar2.webp" },
-      { image3: "./images/seccionHabitaciones/estandar/estandar3.webp" },
-    ],
+    title: "Alberca",
+    image: "./images/seccionInstalaciones/alberca.webp",
   },
   {
-    descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado, sala recibidor",
-    title: "Mini suite",
-    images: [
-      { image1: "./images/seccionHabitaciones/minisuite/minisuite1.webp" },
-      { image2: "./images/seccionHabitaciones/minisuite/minisuite2.webp" },
-      { image3: "./images/seccionHabitaciones/minisuite/minisuite3.webp" },
-    ],
+    title: "Biblioteca",
+    image: "./images/seccionInstalaciones/biblioteca.webp",
   },
   {
-    descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado, sala recibidor (compartida)",
-    title: "Duplex",
-    images: [
-      { image1: "./images/seccionHabitaciones/duplex/duplex1.webp" },
-      { image2: "./images/seccionHabitaciones/duplex/duplex2.webp" },
-      { image3: "./images/seccionHabitaciones/duplex/duplex3.webp" },
-    ],
+    title: "Capilla",
+    image: "./images/seccionInstalaciones/capilla.webp",
+  },
+  {
+    title: "Restaurante",
+    image: "./images/seccionInstalaciones/restaurante.webp",
+  },
+  {
+    title: "Gimnasio",
+    image: "./images/seccionInstalaciones/gimnasio.webp",
+  },
+  {
+    title: "Jardin",
+    image: "./images/seccionInstalaciones/jardin.webp",
+  },
+  {
+    title: "Spa",
+    image: "./images/seccionInstalaciones/spa.webp",
   },
 ];
 
-// Componente para el contenido del slide
-
-const SlideContentLg = ({ habitacion }) => {
-  const [imgBig, setImgBig] = useState([
-    habitacion.images[0].image1,
-    habitacion.images[1].image2,
-    habitacion.images[2].image3,
-  ]);
-
-  const handleReplaceImg = (cuadrante) => {
-    const newImgBig = [...imgBig];
-    if (cuadrante === 2) {
-      [newImgBig[0], newImgBig[1]] = [newImgBig[1], newImgBig[0]];
-    } else if (cuadrante === 3) {
-      [newImgBig[0], newImgBig[2]] = [newImgBig[2], newImgBig[0]];
-    }
-    setImgBig(newImgBig);
-  };
-
+const SlideContentMd = ({ instalacion }) => {
   return (
-    <div className="-translate-y-8 w-[80%] h-full flex flex-col items-center justify-center p-4 transition-all duration-300">
-      <div className="grid grid-cols-3 grid-rows-2 gap-4 w-[80%] max-h-[420px] ">
-        <div className="col-span-2 row-span-2">
-          <motion.img
-            src={imgBig[0]}
-            alt="Imagen 1"
-            className="rounded-md w-full h-full object-cover aspect-square"
-            initial={{ opacity: 0, scale: 0.9 }} // Comienza más pequeño
-            animate={{ opacity: 1, scale: 1 }} // Transición de escala
-            transition={{
-              duration: 0.6, // Aumenta la duración
-              ease: "easeInOut", // Easing más dramático
-            }}
-          />
-        </div>
-        <div className="row-start-1 col-start-3">
-          <motion.img
-            src={imgBig[1]}
-            alt="Imagen 2"
-            className="rounded-md w-full h-full object-cover aspect-square cursor-pointer"
-            initial={{ opacity: 0, scale: 0.9 }} // Comienza más pequeño
-            animate={{ opacity: 1, scale: 1 }} // Transición de escala
-            transition={{
-              duration: 0.6, // Aumenta la duración
-              ease: "easeInOut", // Easing más dramático
-            }}
-            onClick={() => {
-              handleReplaceImg(2);
-            }}
-          />
-        </div>
-        <div className="row-start-2 col-start-3">
-          <motion.img
-            src={imgBig[2]}
-            alt="Imagen 3"
-            className="rounded-md w-full h-full object-cover aspect-square cursor-pointer"
-            initial={{ opacity: 0, scale: 0.9 }} // Comienza más pequeño
-            animate={{ opacity: 1, scale: 1 }} // Transición de escala
-            transition={{
-              duration: 0.6, // Aumenta la duración
-              ease: "easeInOut", // Easing más dramático
-            }}
-            onClick={() => {
-              handleReplaceImg(3);
-            }}
-          />
-        </div>
+    <div className="w-full h-full relative rounded-lg flex justify-center">
+      <img
+        src={instalacion.image}
+        alt="casa otoño"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-lg"
+      />
+      <div className=" flex items-center justify-center bg-brick opacity-90 rounded-lg z-10 w-36 h-10 mt-10">
+        <h1 className="text-white text-[1.6rem] mx-4 my-1 opacity-100">
+          {instalacion.title}
+        </h1>
       </div>
-      <h3 className="font-medium text-lg text-start">
-        {habitacion.descripcion}
-      </h3>
-    </div>
-  );
-};
-
-const SlideContentMd = ({ habitacion }) => {
-  const [imgBig, setImgBig] = useState([
-    habitacion.images[0].image1,
-    habitacion.images[1].image2,
-    habitacion.images[2].image3,
-  ]);
-
-  const handleReplaceImg = (cuadrante) => {
-    const newImgBig = [...imgBig];
-    if (cuadrante === 2) {
-      [newImgBig[0], newImgBig[1]] = [newImgBig[1], newImgBig[0]];
-    } else if (cuadrante === 3) {
-      [newImgBig[0], newImgBig[2]] = [newImgBig[2], newImgBig[0]];
-    }
-    setImgBig(newImgBig);
-  };
-
-  return (
-    <div className="-translate-y-8 w-full h-full flex flex-col items-center justify-center p-4 transition-all duration-300">
-      <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3">
-        {habitacion.title}
-      </h1>
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:w-[600px] md:w-[800px] lg:w-[1000px] max-h-[400px] ">
-        <div className="col-span-2">
-          <img
-            src={imgBig[0]}
-            alt="Imagen 1"
-            className="rounded-md w-full h-full object-cover aspect-square "
-          />
-        </div>
-        <div>
-          <img
-            src={imgBig[1]}
-            alt="Imagen 2"
-            className="rounded-md w-full h-full object-cover aspect-square "
-            onClick={() => {
-              handleReplaceImg(2);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={imgBig[2]}
-            alt="Imagen 3"
-            className="rounded-md w-full h-full object-cover aspect-square "
-            onClick={() => {
-              handleReplaceImg(3); // Solo pasar el número del cuadrante
-            }}
-          />
-        </div>
-      </div>
-      <h3 className="translate-y-5">{habitacion.descripcion}</h3>
     </div>
   );
 };
 
 export const Carousel = () => {
   const [windoWidth, setWindoWidth] = useState(0);
+  const [imgBig, setImgBig] = useState([
+    instalaciones[0],
+    instalaciones[1],
+    instalaciones[2],
+    instalaciones[3],
+    instalaciones[4],
+    instalaciones[5],
+    instalaciones[6],
+  ]);
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   useEffect(() => {
     setWindoWidth(window.innerWidth);
+    console.log(`El valor del vieport es : ${windoWidth}`);
   }, [windoWidth]);
+
+  const handleReplaceImg = (cuadrante) => {
+    const newImgBig = [...imgBig];
+    if (cuadrante === 2) {
+      [newImgBig[0], newImgBig[1]] = [newImgBig[1], newImgBig[0]];
+    } else if (cuadrante === 3) {
+      [newImgBig[0], newImgBig[2]] = [newImgBig[2], newImgBig[0]];
+    } else if (cuadrante === 5) {
+      [newImgBig[3], newImgBig[4]] = [newImgBig[4], newImgBig[3]];
+    } else if (cuadrante === 6) {
+      [newImgBig[3], newImgBig[5]] = [newImgBig[5], newImgBig[3]];
+    } else if (cuadrante === 7) {
+      [newImgBig[3], newImgBig[6]] = [newImgBig[6], newImgBig[3]];
+    }
+    setImgBig(newImgBig);
+  };
 
   return (
     <>
-      {windoWidth >= 1024 && (
-        <div className="flex ">
-          <div className="-translate-y-[20%] translate-x-[70%] flex flex-col justify-around w-28 h-80">
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-2">
-              Estandart
-            </h1>
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-6">
-              Mini siut
-            </h1>
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-8">
-              Duplex
-            </h1>
-          </div>
-        </div>
-      )}
+      {" "}
       <Swiper
-        modules={[Pagination]}
-        spaceBetween={5}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
         loop={true}
-        speed={500}
-        className="w-full h-full flex justify-center items-center lg:-translate-x-[2%] "
+        className="mySwiper rounded-lg"
+        onSwiper={(swiper) => setSwiperInstance(swiper)}
+        breakpoints={{
+          1024: {
+            loop: false,
+          },
+
+          320: {
+            loop: true,
+          },
+        }}
       >
-        {habitaciones.map((habitacion) => (
-          <SwiperSlide
-            key={habitacion.title}
-            className="w-full h-full flex justify-center  "
-          >
-            <div className="font-spartan max-w-96 sm:min-w-full h-[535px] sm:min-h-full lg:w- left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center  ">
-              {windoWidth >= 1024 ? (
-                <SlideContentLg habitacion={habitacion} />
-              ) : (
-                <SlideContentMd habitacion={habitacion} />
-              )}
-            </div>
-          </SwiperSlide>
-        ))}
+        {windoWidth >= 1024 ? (
+          <>
+            <SwiperSlide>
+              <div className="font-spartan min-h-full min-w-full left-1/2 -translate-x-[51%]  relative flex justify-center items-center  rounded-lg ">
+                <div
+                  className="grid grid-cols-3 grid-rows-2 gap-4 w-[80%] max-h-[500px] "
+                  onMouseEnter={() => swiperInstance?.autoplay.stop()}
+                  onMouseLeave={() => swiperInstance?.autoplay.start()}
+                >
+                  <div className="relative row-start-1 col-start-1 flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
+                      <h1 className="text-white text-[1.2rem] mx-4 ">
+                        {imgBig[1].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[1].image}
+                      alt="Imagen 2"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                      onClick={() => {
+                        handleReplaceImg(2);
+                      }}
+                    />
+                  </div>
+                  <div className="relative row-start-2 col-start-1 flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
+                      <h1 className="text-white text-[1.2rem] mx-4 ">
+                        {imgBig[2].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[2].image}
+                      alt="Imagen 2"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                      onClick={() => {
+                        handleReplaceImg(3);
+                      }}
+                    />
+                  </div>
+                  <div className="relative col-span-2 row-span-2 flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick  rounded-2xl z-10 w-56 h-12 mt-10 ">
+                      <h1 className="text-white text-[2rem] mx-4">
+                        {imgBig[0].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[0].image}
+                      alt="Imagen 1"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="font-spartan min-h-full min-w-full left-1/2 -translate-x-[51%]  relative flex justify-center items-center  rounded-lg ">
+                <div
+                  className="grid grid-cols-3 grid-rows-3 gap-4 w-[80%] max-h-[500px] "
+                  onMouseEnter={() => swiperInstance?.autoplay.stop()}
+                  onMouseLeave={() => swiperInstance?.autoplay.start()}
+                >
+                  <div className="relative col-span-3 row-span-2 flex justify-center shadow-sm">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-56 h-12 mt-10 ">
+                      <h1 className="text-white text-[2rem] mx-4 ">
+                        {imgBig[3].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[3].image}
+                      alt="Imagen 1"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                    />
+                  </div>
+                  <div className="relative flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
+                      <h1 className="text-white text-[1.2rem] mx-4 ">
+                        {imgBig[4].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[4].image}
+                      alt="Imagen 2"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                      onClick={() => {
+                        handleReplaceImg(5);
+                      }}
+                    />
+                  </div>
+                  <div className="relative flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
+                      <h1 className="text-white text-[1.2rem] mx-4 ">
+                        {imgBig[5].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[5].image}
+                      alt="Imagen 2"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                      onClick={() => {
+                        handleReplaceImg(6);
+                      }}
+                    />
+                  </div>
+                  <div className="relative flex justify-center">
+                    <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
+                      <h1 className="text-white text-[1.2rem] mx-4 ">
+                        {imgBig[6].title}
+                      </h1>
+                    </div>
+                    <img
+                      src={imgBig[6].image}
+                      alt="Imagen 2"
+                      className="rounded-md w-full h-full object-cover aspect-square "
+                      onClick={() => {
+                        handleReplaceImg(7);
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          </>
+        ) : (
+          instalaciones.map((instalacion) => (
+            <SwiperSlide key={instalacion.title}>
+              <div className="font-spartan max-w-96 h-[535px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2  relative flex justify-center items-center  rounded-lg ">
+                <SlideContentMd instalacion={instalacion} />
+              </div>
+            </SwiperSlide>
+          ))
+        )}
       </Swiper>
     </>
   );

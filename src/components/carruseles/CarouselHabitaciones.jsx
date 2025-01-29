@@ -112,7 +112,7 @@ const SlideContentLg = ({ habitacion }) => {
           />
         </div>
       </div>
-      <h3 className="font-medium text-lg text-start">
+      <h3 className="font-medium text-lg text-start w-[80%] mt-4">
         {habitacion.descripcion}
       </h3>
     </div>
@@ -170,7 +170,7 @@ const SlideContentMd = ({ habitacion }) => {
           />
         </div>
       </div>
-      <h3 className="translate-y-5">{habitacion.descripcion}</h3>
+      <h3 className="translate-y-5 ">{habitacion.descripcion}</h3>
     </div>
   );
 };
@@ -186,7 +186,7 @@ export const Carousel = () => {
     <>
       {windoWidth >= 1024 && (
         <div className="flex ">
-          <div className="-translate-y-[20%] translate-x-[70%] flex flex-col justify-around w-28 h-80">
+          <div className="-translate-y-[20%] translate-x-[80%] 2xl:translate-x-[130%]  flex flex-col justify-around w-28 h-80 transition-all">
             <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-2">
               Estandart
             </h1>
@@ -206,14 +206,14 @@ export const Carousel = () => {
         pagination={{ clickable: true }}
         loop={true}
         speed={500}
-        className="w-full h-full flex justify-center items-center lg:-translate-x-[2%] "
+        className="w-full h-full lg:max-w-[1400px] flex justify-center items-center lg:-translate-x-[2%] "
       >
         {habitaciones.map((habitacion) => (
           <SwiperSlide
             key={habitacion.title}
-            className="w-full h-full flex justify-center  "
+            className="w-full  h-full flex justify-center  "
           >
-            <div className="font-spartan max-w-96 sm:min-w-full h-[535px] sm:min-h-full lg:w- left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center  ">
+            <div className="font-spartan max-w-96 h-[535px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center  ">
               {windoWidth >= 1024 ? (
                 <SlideContentLg habitacion={habitacion} />
               ) : (
