@@ -12,6 +12,7 @@ module.exports = {
         mmenu: "#63301B",
         bgestan: "#FCF9F5",
         bgpagi: "#E2D8D4",
+        bgbnn: "#D45F35",
       },
     },
   },
