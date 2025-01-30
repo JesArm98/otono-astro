@@ -1,0 +1,148 @@
+
+---
+---
+
+<section id="Contacto" class="hide-nav translate-y-[85%]">
+    
+   <div class="grid grid-cols-1 md:grid-cols-2 font-spartan" >
+    <div class="flex flex-col items-center lg:col-span-1">
+        <h1  class=" text-brick font-medium  text-start mt-5 pt-7 lg:pt-12 text-[2rem] sm:text-[2.5rem] sm:mt-7 sm:pt-6 sm:pl-20 ">
+            Contacto
+        </h1>
+    
+        <h2 class=" text-black font-light text-center max-w-[1200px] mx-2 my-5 sm:my-7 sm:mt-7 text-[1.3rem] sm:text-[1.6rem] " >
+            En Casa Otoño, nos encantaría resolver todas tus preguntas. No dudes en ponerte en contacto con nosotros.
+        </h2>
+        <ul class="flex flex-col items-center">
+            <li class="flex flex-col items-center w-[80%] ">
+                <img src="./images/contactoIcons/correo_icon.svg" alt="iconosContacto" class="w-8">
+                <h2 class="mb-6 text-[20px] font-light">servicios.casaotono@hotmail.com</h2>
+            </li>
+            <li class="flex flex-col items-center w-[80%] ">
+                <img src="./images/contactoIcons/telefono_icon.svg" alt="iconosContacto" class="w-8 m-1">
+                <h2 class="mb-6 text-[20px] font-light">667-721-52-03
+                    <br/>
+                    667-721-52-58
+                    </h2>
+            </li>
+            <li class="flex flex-col items-center w-[80%] ">
+                <img src="./images/contactoIcons/whats_icon.svg" alt="iconosContacto" class="w-8">
+                <h2 class="mb-6 text-[20px] font-light">667 502 13 61</h2>
+            </li>
+            <li class="flex flex-col items-center w-[70%] ">
+                <img src="./images/contactoIcons/ubicacion_icon.svg" alt="iconosContacto" class="w-8">
+                <h2 class="text-center mb-6 text-[20px] font-light" >Blvd. Pedro Infante 3002, Gasolinera del Valle, Las Flores, 80104 Culiacán Rosales, Sin.</h2>
+            </li>
+        </ul>
+        <a href="https://maps.app.goo.gl/8Ur6vmqnfXkhAJk97" target="_blank" class="border rounded-lg  border-bgbnn flex justify-center items-center w-72 py-1  hover:bg-bgbnn hover:bg-opacity-10  transition-all duration-300"><img src="./images/contactoIcons/maps_icon.svg" alt="iconosContacto" class="w-8"> <h3 class="text-bgbnn text-[20px] font-light">Como llegar a casa otoño</h3> </a>
+        
+    </div>
+    
+    <div class="mt-10">
+        <form id="contactForm" class="flex flex-col items-center font-spartan">
+
+            <div class="relative ">
+                <input
+                maxlength="15"
+                  name="name"
+                  class=" peer min-w-[320px] max-h-14 bg-transparent placeholder:text-slate-400 text-slate-700  border border-bgbnn rounded-md px-3 py-2 transition duration-300 ease text-[1.1rem] mb-8 focus:outline-none shadow-sm focus:shadow"
+                  placeholder="Ingrese su nombre completo"
+                  type="text"
+                  required
+                />
+                <label aria-readonly="true" class=" absolute cursor-text bg-white px-1 transition-all transform origin-left -top-2 left-2.5 text-sm text-slate-400 scale-90">
+                  Nombre
+                </label>
+              </div>
+              
+              <div class="relative">
+                <input
+                maxlength="5"
+                  name="email"
+                  class=" peer min-w-[320px] max-h-14 bg-transparent placeholder:text-slate-400 text-slate-700  border border-bgbnn rounded-md px-3 py-2 transition duration-300 ease text-[1.1rem] mb-8 focus:outline-none shadow-sm focus:shadow"
+                  placeholder="Ingrese su correo electrónico"
+                  type="email"
+                  required
+                />
+                <label aria-readonly="true" class=" absolute cursor-text bg-white px-1 transition-all transform origin-left -top-2 left-2.5 text-sm text-slate-400 scale-90">
+                  Correo electrónico
+                </label>
+              </div>
+              
+              <div class="relative">
+                <input
+                maxlength="5"
+                  name="phone"
+                  class=" peer min-w-[320px] max-h-14 bg-transparent placeholder:text-slate-400 text-slate-700 border border-bgbnn rounded-md px-3 py-2 transition duration-300 ease text-[1.1rem] mb-8 focus:outline-none shadow-sm focus:shadow"
+                  placeholder="Ingrese su número de contacto"
+                  type="number"
+                  required
+                />
+                <label aria-readonly="true" class=" absolute cursor-text bg-white px-1 transition-all transform origin-left -top-2 left-2.5 text-sm text-slate-400 scale-90">
+                  Teléfono
+                </label>
+              </div>
+              
+              <div class="relative">
+                <textarea
+                  name="message"
+                  
+                  class=" peer min-w-[320px] h-12  max-h-52 bg-transparent placeholder:text-slate-400 text-slate-700  border border-bgbnn rounded-md px-3 py-2 transition duration-300 ease text-[1.1rem] mb-8 focus:outline-none shadow-sm focus:shadow"
+                  placeholder="Déjenos un mensaje con sus comentarios"
+                  required
+                ></textarea>
+                <label aria-readonly="true" class=" absolute cursor-text bg-white px-1 transition-all transform origin-left -top-2 left-2.5 text-sm text-slate-400 scale-90">
+                  Mensaje
+                </label>
+              </div>
+              
+    
+            <button type="submit" class="border border-bgbnn text-bgbnn rounded-lg text-[1.2rem] w-40 py-2 hover:bg-bgbnn hover:bg-opacity-10  transition-all duration-300 mb-5">Enviar</button>
+        </form>
+    
+    </div>
+   </div>
+</section>
+
+<script>
+
+
+    document.getElementById("contactForm").addEventListener("submit", async function(event) {
+        event.preventDefault(); // Evita el envío normal del formulario
+
+        const form = event.target as HTMLFormElement;
+        const formData = new FormData(form);
+
+        // Crear un objeto con los datos del formulario
+        const postData = {
+            destino: "Casaotono",
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            message: formData.get("message"),
+        };
+
+        const url = "https://us-central1-tvn-api.cloudfunctions.net/app/send-email-casaotono";
+
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(postData)
+            });
+
+            if (response.ok) {
+                document.getElementById("statusMessage").innerText = "✅ Mensaje enviado con éxito";
+                console.log("El mensaje fue enviado exitadamente")
+                form.reset(); // Limpia el formulario
+            } else {
+                throw new Error("Error al enviar el formulario");
+            }
+        } catch (error) {
+            document.getElementById("statusMessage").innerText = "❌ Hubo un problema, intente de nuevo.";
+            console.error("Error en la petición:", error);
+        }
+    });
+</script>
