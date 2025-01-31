@@ -44,13 +44,13 @@ const instalaciones = [
 
 const SlideContentMd = ({ instalacion }) => {
   return (
-    <div className="w-full h-full relative rounded-lg flex justify-center">
+    <div className="w-full h-full relative rounded-lg flex justify-center shadow-md  shadow-gray-500">
       <img
         src={instalacion.image}
         alt="casa otoño"
-        className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-lg"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 rounded-lg shadow-md  shadow-gray-500"
       />
-      <div className=" flex items-center justify-center bg-brick opacity-90 rounded-lg z-10 w-36 h-10 mt-10">
+      <div className=" flex items-center justify-center bg-brick opacity-90 rounded-lg z-10 w-36 h-10 mt-10 ">
         <h1 className="text-white text-[1.6rem] mx-4 my-1 opacity-100">
           {instalacion.title}
         </h1>
@@ -127,7 +127,7 @@ export const Carousel = () => {
                   onMouseEnter={() => swiperInstance?.autoplay.stop()}
                   onMouseLeave={() => swiperInstance?.autoplay.start()}
                 >
-                  <div className="relative row-start-1 col-start-1 flex justify-center">
+                  <div className="relative row-start-1 col-start-1 flex justify-center shadow-lg rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
                       <h1 className="text-white text-[1.2rem] mx-4 ">
                         {imgBig[1].title}
@@ -142,7 +142,7 @@ export const Carousel = () => {
                       }}
                     />
                   </div>
-                  <div className="relative row-start-2 col-start-1 flex justify-center">
+                  <div className="relative row-start-2 col-start-1 flex justify-center shadow-md rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
                       <h1 className="text-white text-[1.2rem] mx-4 ">
                         {imgBig[2].title}
@@ -157,7 +157,7 @@ export const Carousel = () => {
                       }}
                     />
                   </div>
-                  <div className="relative col-span-2 row-span-2 flex justify-center">
+                  <div className="relative col-span-2 row-span-2 flex justify-center shadow-md rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick  rounded-2xl z-10 w-56 h-12 mt-4 ">
                       <h1 className="text-white text-[2rem] mx-4">
                         {imgBig[0].title}
@@ -179,7 +179,7 @@ export const Carousel = () => {
                   onMouseEnter={() => swiperInstance?.autoplay.stop()}
                   onMouseLeave={() => swiperInstance?.autoplay.start()}
                 >
-                  <div className="relative col-span-3 row-span-2 flex justify-center shadow-sm">
+                  <div className="relative col-span-2 row-span-3 flex justify-center shadow-lg rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-56 h-12 mt-4 ">
                       <h1 className="text-white text-[2rem] mx-4 ">
                         {imgBig[3].title}
@@ -191,7 +191,7 @@ export const Carousel = () => {
                       className="rounded-md w-full h-full object-cover aspect-square "
                     />
                   </div>
-                  <div className="relative flex justify-center">
+                  <div className="relative flex justify-center shadow-md rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
                       <h1 className="text-white text-[1.2rem] mx-4 ">
                         {imgBig[4].title}
@@ -206,7 +206,7 @@ export const Carousel = () => {
                       }}
                     />
                   </div>
-                  <div className="relative flex justify-center">
+                  <div className="relative flex justify-center shadow-md rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
                       <h1 className="text-white text-[1.2rem] mx-4 ">
                         {imgBig[5].title}
@@ -221,7 +221,7 @@ export const Carousel = () => {
                       }}
                     />
                   </div>
-                  <div className="relative flex justify-center">
+                  <div className="relative flex justify-center shadow-md rounded-md shadow-gray-500">
                     <div className=" absolute  flex items-center justify-center bg-brick rounded-2xl z-10 w-32 h-8 mt-2 ">
                       <h1 className="text-white text-[1.2rem] mx-4 ">
                         {imgBig[6].title}

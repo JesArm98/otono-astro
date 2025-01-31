@@ -1,7 +1,5 @@
 
 ---
-import { date } from "astro:schema";
-
 const opciones = [
     { title: "Nosotros", href: "#Objetivo" },
     { title: "Estancia", href: "#Estancia" },
@@ -12,17 +10,15 @@ const opciones = [
 ];
 
 const year = new Date().getFullYear();
-
-
 ---
 
 
 
 
-<section id="Footer" class=" relative bg-bgestan translate-y-[175%] sm:translate-y-[50%] lg:translate-y-[20%] w-full h-auto flex justify-center">
+<section id="Footer" class=" relative bg-bgestan translate-y-[130%] sm:translate-y-[50%] lg:translate-y-[20%] w-full h-auto flex justify-center">
     <footer class="flex flex-col w-full items-center md:grid md:grid-cols-3 md:grid-rows-4">
         <div class="md:col-span-1 md:row-span-3 flex justify-center">
-            <img src="./images/navOtonoLogo.svg" alt="Logo casa otoño" class="min-w-44 max-w-[300px] mx-20 my-16 ">
+            <img src="./images/navOtonoLogo.svg" alt="Logo casa otoño" class="min-w-44 max-w-[300px] max-h-40 mx-20 my-16 ">
         </div>
         <div class="md:col-span-1 md:row-span-3">
             <ul class="flex flex-col md:flex-row md:flex-wrap  items-center justify-evenly  w-full h-[80%] mt-15 z-50">
@@ -35,15 +31,15 @@ const year = new Date().getFullYear();
                 }
             </ul>
         </div>
-        <div class="w-[60%] flex flex-col items-center md:col-span-1 md:row-span-3">
+        <div class=" flex flex-col items-center md:col-span-1 md:row-span-3">
             <div class="flex justify-evenly w-full">
                 <a target="_blank" href="https://www.facebook.com/profile.php?id=100053023187509">
                     <img src="./images/contactoIcons/facebook_icon.svg" alt="facebook" class="min-w-12 ">
                 </a>
-                <a target="_blank" class="border border-bgbnn rounded-full p-1 mx-2 min-w-11 max-h-11" href="https://maps.app.goo.gl/8Ur6vmqnfXkhAJk97">
+                <a target="_blank" class="border border-bgbnn rounded-full p-1 flex justify-center mx-2 min-w-11 max-h-11 border-opacity-90" href="https://maps.app.goo.gl/8Ur6vmqnfXkhAJk97">
                     <img src="./images/contactoIcons/maps_icon.svg" alt="ubicacion" class="max-w-8">
                 </a>
-                <a target="_blank" class="border border-bgbnn rounded-full p-1 mx-2 min-w-11 max-h-11" href="https://wa.me/526675021361">
+                <a target="_blank" class="border border-bgbnn rounded-full p-1 flex justify-center mx-2 min-w-11 max-h-11 border-opacity-90" href="https://wa.me/526675021361">
                     <img src="./images/contactoIcons/whats_icon.svg" alt="whatssapp" class="max-w-8">
                 </a>
             </div>
@@ -52,7 +48,7 @@ const year = new Date().getFullYear();
             </button>
         </div>
         <div class="md:col-span-3 md:row-span-1 w-full text-center">
-            <hr class="border-1 border-bgbnn opacity-30 my-7">
+            <hr class="border-1 border-bgbnn opacity-80 my-7 mx-8">
             <h2 class="mb-10 font-spartan font-light text-gray-500">
                 Aviso de privacidad - © {year} CASA OTOÑO
             </h2>

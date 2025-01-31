@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "./CarouselHabitaciones.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 const habitaciones = [
@@ -66,7 +66,7 @@ const SlideContentLg = ({ habitacion }) => {
   return (
     <div className="-translate-y-8 w-[80%] h-full flex flex-col items-center justify-center p-4 transition-all duration-300">
       <div className="grid grid-cols-3 grid-rows-2 gap-4 w-[80%] max-h-[420px] ">
-        <div className="col-span-2 row-span-2">
+        <div className="col-span-2 row-span-2 shadow-md rounded-md ">
           <motion.img
             src={imgBig[0]}
             alt="Imagen 1"
@@ -79,7 +79,7 @@ const SlideContentLg = ({ habitacion }) => {
             }}
           />
         </div>
-        <div className="row-start-1 col-start-3">
+        <div className="row-start-1 col-start-3 shadow-md rounded-md">
           <motion.img
             src={imgBig[1]}
             alt="Imagen 2"
@@ -95,7 +95,7 @@ const SlideContentLg = ({ habitacion }) => {
             }}
           />
         </div>
-        <div className="row-start-2 col-start-3">
+        <div className="row-start-2 col-start-3 shadow-md rounded-md">
           <motion.img
             src={imgBig[2]}
             alt="Imagen 3"
@@ -142,14 +142,14 @@ const SlideContentMd = ({ habitacion }) => {
         {habitacion.title}
       </h1>
       <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:w-[600px] md:w-[800px] lg:w-[1000px] max-h-[400px] ">
-        <div className="col-span-2">
+        <div className="col-span-2 shadow-lg shadow-gray-500 rounded-md ">
           <img
             src={imgBig[0]}
             alt="Imagen 1"
             className="rounded-md w-full h-full object-cover aspect-square "
           />
         </div>
-        <div>
+        <div className="shadow-md rounded-md shadow-gray-500">
           <img
             src={imgBig[1]}
             alt="Imagen 2"
@@ -159,7 +159,7 @@ const SlideContentMd = ({ habitacion }) => {
             }}
           />
         </div>
-        <div>
+        <div className="shadow-md rounded-md shadow-gray-500">
           <img
             src={imgBig[2]}
             alt="Imagen 3"
@@ -170,13 +170,14 @@ const SlideContentMd = ({ habitacion }) => {
           />
         </div>
       </div>
-      <h3 className="translate-y-5 ">{habitacion.descripcion}</h3>
+      <h3 className="translate-y-4 ">{habitacion.descripcion}</h3>
     </div>
   );
 };
 
 export const Carousel = () => {
   const [windoWidth, setWindoWidth] = useState(0);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     setWindoWidth(window.innerWidth);
@@ -185,35 +186,38 @@ export const Carousel = () => {
   return (
     <>
       {windoWidth >= 1024 && (
-        <div className="flex ">
-          <div className="-translate-y-[20%] translate-x-[80%] 2xl:translate-x-[130%]  flex flex-col justify-around w-28 h-80 transition-all">
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-2">
-              Estandart
-            </h1>
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-6">
-              Mini siut
-            </h1>
-            <h1 className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-3 translate-y-8">
-              Duplex
-            </h1>
+        <div className="flex">
+          <div className="-translate-y-[4%] translate-x-[80%]  2xl:translate-x-[180%] flex flex-col justify-around w-28 h-80 transition-all">
+            {habitaciones.map((habitacion, index) => (
+              <h1
+                key={index}
+                className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-30 cursor-pointer w-60 h-20"
+                onClick={() => swiperRef.current?.slideTo(index)} // Cambia de slide
+              >
+                {habitacion.title}
+              </h1>
+            ))}
           </div>
         </div>
       )}
+
       <Swiper
+        ref={swiperRef} // Asigna la referencia
         modules={[Pagination]}
         spaceBetween={5}
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true}
         speed={500}
-        className="w-full h-full lg:max-w-[1400px] flex justify-center items-center lg:-translate-x-[2%] "
+        className="w-full h-full lg:max-w-[1400px] flex justify-center items-center lg:-translate-x-[2%]"
+        onSwiper={(swiper) => (swiperRef.current = swiper)} // Guarda la instancia de Swiper
       >
-        {habitaciones.map((habitacion) => (
+        {habitaciones.map((habitacion, index) => (
           <SwiperSlide
-            key={habitacion.title}
-            className="w-full  h-full flex justify-center  "
+            key={index}
+            className="w-full h-full flex justify-center"
           >
-            <div className="font-spartan max-w-96 h-[535px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center  ">
+            <div className="font-spartan max-w-96 h-[550px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center">
               {windoWidth >= 1024 ? (
                 <SlideContentLg habitacion={habitacion} />
               ) : (
