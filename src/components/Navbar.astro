@@ -9,7 +9,7 @@ const opcionesLeft = [
 const opcionesRigth = [
     { title: "Instalaciones", href: "#Instalaciones" },
     { title: "Actividades", href: "#Actividades" },
-    { title: "Contacto", href: "#Contacto" },
+    { title: "Contacto", href: "#Footer" },
 ];
 
 const opcionesMovil = [
@@ -24,7 +24,7 @@ const opcionesMovil = [
 
 <nav class="menuScroll lg:hidden fixed top-0 z-40 flex justify-between w-full items-center transition-all">
     <a href="#Home" class="logo transition-all w-60 ml-4 mt-3 mb-3">
-        <img class="w-auto h-auto" src="./images/LogoCell.svg" alt="Logo casa otoño movil" />
+        <img class="w-auto h-auto" src="./images/LogoCell.svg" alt="Logo casa otoño movil" >
     </a>
 
     <div id="menu-button"  class="burger relative w-14 lg:hidden flex items-center focus:outline-none mr-4 mt-3 z-50">
@@ -72,7 +72,7 @@ const opcionesMovil = [
         </ul>
     
 
-   <a href="#Home" class=" w-72 mx-14 "><img class="w-32" src="./images/navOtonoLogo.svg" alt="Logo de casa otoño"></a>
+   <a href="#Home" class=" w-72 mx-14 "><img class="w-32 h-32" src="./images/navOtonoLogo.svg" alt="Logo de casa otoño"></a>
 
     
         <ul class="flex justify-around items-center w-full">
@@ -115,7 +115,7 @@ const opcionesMovil = [
         background-color: transparent;
         color: white;
         box-shadow: none;
-        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease-in-out,;
     }
 
     nav.scrolled {
@@ -223,9 +223,9 @@ window.addEventListener("scroll", () => {
         const contactoPosition = contactoSection.getBoundingClientRect().top;
 
         if (contactoPosition <= window.innerHeight * 0.4) {
-            navs.forEach(nav => nav.style.opacity = "0"); 
+            navs.forEach(nav => {nav.style.opacity = "0", nav.style.transform = "translateY(-100%)"}); 
         } else {
-            navs.forEach(nav => nav.style.opacity = "1"); 
+            navs.forEach(nav =>{ nav.style.opacity = "1", nav.style.transform = "translateY(0)"});  
         }
     }
 });
