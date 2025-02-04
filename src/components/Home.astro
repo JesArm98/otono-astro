@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
     <section id="Home" class=" relative h-screen flex justify-center ">
         <!-- Imagen como fondo -->
-        <img src="./images/casa_otono.webp" alt="casa otoño" class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <img src="./images/casa_otono.webp" alt="casa otoño" class="absolute top-0 left-0 w-full h-full object-cover z-0 loading="lazy"">
 
         <!-- Filtro de color -->
         <div class="absolute top-0 left-0 w-full h-full bg-brick opacity-50 z-10"></div>
@@ -15,7 +15,7 @@ import Layout from "../layouts/Layout.astro";
                 ¡Bienvenidos a nuestra acogedora y dedicada residencia para adultos mayores!
             </h1>
 
-            <h3 class="font-spartan  max-w-[920px] font-light leading-tight my-10 text-center text-[1.5rem] sm:text-[2.5rem] " >
+            <h3 class="font-spartan min-w-[330px]  max-w-[920px] font-light leading-tight my-10 text-center text-[1.5rem] sm:text-[2.5rem] " >
                 Ofrecemos un servicio integral y profesional, creando un modelo de atención que fomenta la convivencia en un ambiente familiar, ameno y seguro.
             </h3>
         </div>

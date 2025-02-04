@@ -5,9 +5,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500&display=swap" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
-		<title>Casa otoño</title>
+		<!-- Pre-cargar la fuente -->
+	<link id="google-font" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500&display=swap" rel="stylesheet" media="print">
+	<script type="module">
+		document.addEventListener('DOMContentLoaded', () => {
+			const fontLink = document.getElementById('google-font');
+			if (fontLink) {
+				fontLink.setAttribute('media', 'all');
+			}
+		});
+	</script>
+		<meta name="Casa Otoño" content="Bienvenidos a nuestra acogedora y dedicada residencia para adultos mayores. Ofrecemos un servicio integral y profesional, creando un modelo de atención que fomenta la convivencia en un ambiente familiar, ameno y seguro." />
+		<title>Casa Otoño</title>
 	</head>
 	<body class="relative">
 		
