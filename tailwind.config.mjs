@@ -13,6 +13,7 @@ module.exports = {
         bgestan: "#FCF9F5",
         bgpagi: "#E2D8D4",
         bgbnn: "#D45F35",
+        bgbnn2: "#B9482F",
       },
     },
   },
