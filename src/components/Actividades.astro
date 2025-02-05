@@ -53,12 +53,13 @@ const actividades = [
         <div class="font-spartan hidden w-full lg:w-[950px] xl:w-[1200px] lg:flex lg:justify-center lg:items-center my-10 ">
             <div class="grid grid-cols-4 gap-6">
               {actividades.map((actividad) => (
-                <div  class="flex flex-col items-center bg-bgpagi rounded-lg shadow-lg overflow-hidden">
+                <div  class=" relative flex flex-col items-center bg-bgpagi rounded-lg shadow-lg overflow-hidden">
                   <img
                     src={actividad.image}
                     alt={actividad.title}
                     class="w-full h-48 object-cover"
                   />
+                  <div class="absolute top-0 left-0 w-full h-48  bg-brick opacity-50 z-10"></div>
                   <div class="p-4">
                     <h3 class="text-xl font-medium text-center ">{actividad.title}</h3>
                     <p class="text-md text-gray-800 my-2">{actividad.descripcion}</p>

@@ -106,7 +106,7 @@ const SlideContentLg = ({ estancia }) => {
         onMouseLeave={() => setHover(false)}
         className=" w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300"
       >
-        <h1 className="text-[1.8rem] xl:text-[2rem]  font-normal pt-2 ml-3">
+        <h1 className="text-[1.8rem] xl:text-[2rem]  font-normal pt-2 ml-3 text-center">
           Servicios que incluye:
         </h1>
         <ul className="translate-y-8">
