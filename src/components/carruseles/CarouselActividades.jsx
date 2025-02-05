@@ -11,26 +11,23 @@ import { useEffect, useState } from "react";
 
 const actividades = [
   {
-    title: "Terapias Fisicas",
+    title: "Terapias Físicas",
     descripcion:
-      "Nuestras terapias fisicas son mas que simples sesiones; son experiencias que unen a nuestros residentes en un ambiente lleno de energia positiva y compañerismo.",
-
+      "Nuestras terapias físicas son más que simples sesiones; son experiencias que unen a nuestros residentes en un ambiente lleno de energía positiva y compañerismo.", // Corregido
     caracteristicas: "(Individuales y grupales)",
     image: "./images/seccionActividades/terapia_fisica.webp",
   },
   {
     title: "Terapias Cognitivas",
     descripcion:
-      "Adaptamos cada sesión a las necesidades únicas de nuestros residentes, estimulando mentes de manera personalizada promoviendo agilidad mental y bienestar emocional.",
-
+      "Adaptamos cada sesión a las necesidades únicas de nuestros residentes, estimulando mentes de manera personalizada, promoviendo agilidad mental y bienestar emocional.", // Corregido
     caracteristicas: "(Personalizadas por residente)",
     image: "./images/seccionActividades/terapia_cognitiva.webp",
   },
   {
     title: "Sábado buffet desayuno familiar",
     descripcion:
-      "Una actividad diseñada para que los familiares de nuestros residentes compartan momentos especiales en un ambiente acogedor creando recuerdos significativos para ellos.",
-
+      "Una actividad diseñada para que los familiares de nuestros residentes compartan momentos especiales en un ambiente acogedor, creando recuerdos significativos para ellos.", // Corregido
     caracteristicas: "",
     image: "./images/seccionActividades/buffet_familiar.webp",
   },
@@ -38,7 +35,6 @@ const actividades = [
     title: "Eventos",
     descripcion:
       "Transformamos cada efeméride en un evento especial para nuestros residentes, organizando actividades temáticas que les brindan experiencias únicas y memorables.",
-
     caracteristicas: "",
     image: "./images/seccionActividades/eventos.webp",
   },
@@ -48,9 +44,13 @@ const actividades = [
 const SlideContentMd = ({ actividad, showData, setShowData }) => {
   if (showData) {
     return (
-      <div className="w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300">
-        <h1 className="text-[2rem] font-normal">{actividad.caracteristicas}</h1>
-        <h2 className="font-light text-[20px]">{actividad.descripcion}</h2>
+      <div className="w-full h-full relative z-10 p-4 bg-brick bg-opacity-95 text-white rounded-md transition-all duration-300 flex flex-col justify-center items-center">
+        <h1 className="text-[2rem] font-normal text-center">
+          {actividad.caracteristicas}
+        </h1>
+        <h2 className="font-light text-[20px] text-center">
+          {actividad.descripcion}
+        </h2>
         <button
           className="text-[1rem] font-light border-white border rounded-lg px-6 mt-5 text-center"
           onClick={() => setShowData(false)}
@@ -63,7 +63,9 @@ const SlideContentMd = ({ actividad, showData, setShowData }) => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full h-full relative z-10 p-4 bg-brick bg-opacity-70 text-white rounded-md transition-all duration-300">
-      <h1 className="text-[1.8rem] font-normal leading-9">{actividad.title}</h1>
+      <h1 className="text-[1.8rem] font-normal leading-9 text-center">
+        {actividad.title}
+      </h1>
       <button
         className="text-[1rem] font-light border-white border rounded-lg px-6 mt-5 text-center"
         onClick={() => setShowData(true)}

@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const habitaciones = [
   {
     descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado.",
+      "Incluye: baño privado, telefonía, internet, TV con cable, aire acondicionado.",
     title: "Estandar",
     images: [
       { image1: "./images/seccionHabitaciones/estandar/estandar1.webp" },
@@ -24,7 +24,7 @@ const habitaciones = [
   },
   {
     descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado, sala recibidor",
+      "Incluye: baño privado, telefonía, internet, TV con cable, aire acondicionado, sala de recibidor.",
     title: "Mini suite",
     images: [
       { image1: "./images/seccionHabitaciones/minisuite/minisuite1.webp" },
@@ -34,7 +34,7 @@ const habitaciones = [
   },
   {
     descripcion:
-      "Incluye: Baño privado, telefonía, internet, TV con cable, aire acondicionado, sala recibidor (compartida)",
+      "Incluye: baño privado, telefonía, internet, TV con cable, aire acondicionado, sala de recibidor (compartida).",
     title: "Duplex",
     images: [
       { image1: "./images/seccionHabitaciones/duplex/duplex1.webp" },
@@ -64,8 +64,8 @@ const SlideContentLg = ({ habitacion }) => {
   };
 
   return (
-    <div className="-translate-y-8 w-[80%] h-full flex flex-col items-center justify-center p-4 transition-all duration-300">
-      <div className="grid grid-cols-3 grid-rows-2 gap-4 w-[80%] max-h-[420px] ">
+    <div className="-translate-y-8 w-[70%] h-full flex flex-col justify-center p-4 transition-all duration-300 ">
+      <div className="grid grid-cols-3 grid-rows-2 gap-4 w-full max-h-[420px]  z-40">
         <div className="col-span-2 row-span-2 shadow-md rounded-md ">
           <motion.img
             src={imgBig[0]}
@@ -178,21 +178,25 @@ const SlideContentMd = ({ habitacion }) => {
 export const Carousel = () => {
   const [windoWidth, setWindoWidth] = useState(0);
   const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     setWindoWidth(window.innerWidth);
-  }, [windoWidth]);
+  }, []);
 
   return (
     <>
       {windoWidth >= 1024 && (
-        <div className="flex">
-          <div className="-translate-y-[4%] translate-x-[80%]  2xl:translate-x-[180%] flex flex-col justify-around w-28 h-80 transition-all">
+        <div className="flex z-50">
+          <div className="-translate-y-[4%] translate-x-[80%] 2xl:translate-x-[180%] flex flex-col justify-around w-28 h-80 transition-all">
             {habitaciones.map((habitacion, index) => (
               <h1
                 key={index}
-                className="text-[1.3rem] font-normal text-orange-600 pt-1 ml-30 cursor-pointer w-60 h-20"
-                onClick={() => swiperRef.current?.slideTo(index)} // Cambia de slide
+                // Se utiliza una clase condicional según el índice activo
+                className={`text-[1.3rem] font-normal pt-1 ml-30 cursor-pointer w-60 h-20 ${
+                  activeIndex === index ? "text-brick" : "text-orange-600" // o el color que desees para inactivo
+                }`}
+                onClick={() => swiperRef.current?.slideToLoop(index)} // Usamos slideToLoop para trabajar con loop
               >
                 {habitacion.title}
               </h1>
@@ -210,6 +214,7 @@ export const Carousel = () => {
         loop={true}
         speed={500}
         className="w-full h-full lg:max-w-[1400px] flex justify-center items-center lg:-translate-x-[2%]"
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         onSwiper={(swiper) => (swiperRef.current = swiper)} // Guarda la instancia de Swiper
       >
         {habitaciones.map((habitacion, index) => (
@@ -217,7 +222,7 @@ export const Carousel = () => {
             key={index}
             className="w-full h-full flex justify-center"
           >
-            <div className="font-spartan max-w-96 h-[550px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2 lg:-translate-x-[51%] relative flex justify-center items-center">
+            <div className="font-spartan max-w-96 h-[550px] sm:min-h-full sm:min-w-full left-1/2 -translate-x-1/2 lg:-translate-x-[51%] lg:z-20 relative flex justify-center items-center">
               {windoWidth >= 1024 ? (
                 <SlideContentLg habitacion={habitacion} />
               ) : (

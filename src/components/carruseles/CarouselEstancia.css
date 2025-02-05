@@ -1,6 +1,6 @@
 .swiper-pagination {
   position: absolute; /* Posicionamiento absoluto */
-  bottom: 40; /* Mover la paginación más abajo (ajusta este valor según necesites) */
+  bottom: 40px; /* Mover la paginación más abajo (ajusta este valor según necesites) */
   left: 50%; /* Centrar horizontalmente */
   /* Ajustar centrado horizontal */
   display: flex;

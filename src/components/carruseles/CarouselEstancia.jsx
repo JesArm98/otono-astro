@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 const estancias = [
   {
     descripcion:
-      "Tu decides los dias de estancia, sin dejar de disfrutar los servicios.",
+      "Tú decides los días de estancia, sin dejar de disfrutar los servicios.",
     title: "Temporal",
 
     servicios: [
@@ -31,13 +31,13 @@ const estancias = [
   {
     descripcion:
       "Estancia de 4 a 12 horas con horario abierto de entrada y salida.",
-    title: "Casa de Dia",
+    title: "Casa de Día",
 
     servicios: [
-      "Servicios de vigilancia de enfermería las 24 hrs",
-      "Servicios de vigilancia las 24hrs, con acceso de los familiares a través de una app",
+      "Servicios de vigilancia y de enfermería las 24 horas",
+      "Servicios de vigilancia las 24 horas, con acceso de los familiares a través de una app",
       "Alimentación",
-      "Terapias físicas, cognitiva y ocupacional.",
+      "Terapias físicas, cognitivas y ocupacionales.",
     ],
     image: "./images/seccionEstancia/estancia_casadia.webp",
   },
@@ -55,7 +55,7 @@ const estancias = [
       "Alimentación.",
       "Valoración médica.",
       "Terapias físicas, cognitiva y ocupacional.",
-      "Sábado de buffet desayuno familiar.",
+      "Sábado de buffet y desayuno familiar.",
     ],
     image: "./images/seccionEstancia/estancia_permanente.webp",
   },
@@ -69,7 +69,7 @@ const SlideContentMd = ({ estancia, showData, setShowData }) => {
         <h1 className="text-[2rem] font-normal">Servicios que incluye:</h1>
         <ul>
           {estancia.servicios.map((servicio, i) => (
-            <li className="font-light text-[20px]" key={i}>
+            <li className="font-light text-[20px] ml-4" key={i}>
               - {servicio}
             </li>
           ))}
@@ -111,7 +111,7 @@ const SlideContentLg = ({ estancia }) => {
         </h1>
         <ul className="translate-y-8">
           {estancia.servicios.map((servicio, i) => (
-            <li className="font-light text-[20px]" key={i}>
+            <li className="font-light text-[20px] ml-4" key={i}>
               - {servicio}
             </li>
           ))}

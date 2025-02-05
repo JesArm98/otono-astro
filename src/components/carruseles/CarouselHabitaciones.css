@@ -1,6 +1,6 @@
 .swiper-pagination {
   position: absolute; /* Posicionamiento absoluto */
-  bottom: 40; /* Mover la paginación más abajo (ajusta este valor según necesites) */
+  bottom: 40px; /* Mover la paginación más abajo (ajusta este valor según necesites) */
   left: 50%; /* Centrar horizontalmente */
   /* Ajustar centrado horizontal */
   display: flex;
@@ -48,19 +48,11 @@
   .swiper-pagination {
     display: flex;
     flex-direction: column;
-
-    transform: translateX(-37%) translateY(-35%);
+    transform: translateX(-37%) translateY(-40%);
+    z-index: 30;
   }
   .swiper-pagination-bullet {
-    background-color: #e2d8d4; /* Color de los bullets */
     width: 8px; /* Ancho de los bullets */
     height: 110px; /* Alto de los bullets */
-    border-radius: 10px; /* Bordes redondeados */
-    margin-left: 300px;
-    opacity: 1; /* Asegura que los bullets sean visibles */
-    transition: background-color 0.5s ease; /* Transición suave para el cambio de color */
-  }
-  .swiper-pagination-bullet-active {
-    background-color: #63301b; /* Color del bullet activo */
   }
 }

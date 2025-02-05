@@ -33,7 +33,7 @@ const instalaciones = [
     image: "./images/seccionInstalaciones/gimnasio.webp",
   },
   {
-    title: "Jardin",
+    title: "Jardín",
     image: "./images/seccionInstalaciones/jardin.webp",
   },
   {
